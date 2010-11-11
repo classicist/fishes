@@ -1,0 +1,16 @@
+History.txt
+Manifest.txt
+PostInstall.txt
+README.rdoc
+Rakefile
+bin/bin
+lib/bin/cli.rb
+lib/fishes.rb
+script/console
+script/destroy
+script/generate
+spec/bin_cli_spec.rb
+spec/fishes_spec.rb
+spec/spec.opts
+spec/spec_helper.rb
+tasks/rspec.rake
