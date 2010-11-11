@@ -1,11 +1,8 @@
 require File.dirname(__FILE__) + '/spec_helper.rb'
 
-# Time to add your specs!
-# http://rspec.info/
-
 describe "Place your specs here" do
   before(:each) do
-    @command_line_args = "command line arguments"
+    @command_line_args = "mxmlc command_line_arguments"
     @fish = Fish.new(@command_line_args)
   end
   
@@ -37,6 +34,7 @@ describe "Place your specs here" do
   end
   
   it "should stop a forked process" do
+    @fish.start
     @fish.start
     @fish.stop.should == 1
     @fish.pid.should be_nil
