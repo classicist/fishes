@@ -8,6 +8,7 @@ class Fish
   end
     
   def start
+    return unless @compiler_arguments
     $stdout.sync = true
     @args = pid ? "compile 1" : @compiler_arguments
     @fish ||= IO.popen(@fcsh_path, "w+")
@@ -20,7 +21,7 @@ class Fish
   
   def stop
     return @exit_status unless @fish
-    @exit_status = Process.kill('TERM', @fish.pid)
+    @exit_status = Process.kill(TERM, @fish.pid)
     @fish.close
     @fish = nil
     @pid = nil
@@ -44,4 +45,35 @@ class Fish
   def hash
     @compiler_arguments.hash
   end  
+end
+
+
+class Pond  
+  def initialize
+    @fishes = Hash.new
+  end
+  
+  def size
+    @fishes.length
+  end
+  
+  def add(compiler_arguments)
+    fish = @fishes[compiler_arguments] ||= Fish.new(compiler_arguments)
+    fish.start
+    fish
+  end
+  
+  def remove(compiler_arguments)
+    @fishes[compiler_arguments] && @fishes[compiler_arguments].stop
+    @fishes.delete compiler_arguments
+  end
+  
+  def recompile_all
+    @fishes.each{ |fish|  fish.start }
+  end
+  
+  def kill_all
+    @fishes.each{ |args, fish|  fish.stop }
+    @fishes = Hash.new
+  end
 end
