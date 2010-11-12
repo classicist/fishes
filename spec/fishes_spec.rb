@@ -1,14 +1,16 @@
 require File.dirname(__FILE__) + '/spec_helper.rb'
 
+COMPILER_PATH = "#{File.dirname(__FILE__)}/fixture_script"
+
 describe "Fish" do
   before(:each) do
     @command_line_args = "mxmlc command_line_arguments"
-    @fish = Fish.new(@command_line_args)
+    @fish = Fish.new(@command_line_args, COMPILER_PATH)
   end
   
   after(:each) do
     @fish.stop();
-    @fish = nil
+    @fish = nil 
   end
   
   it "should find a fish" do
@@ -20,7 +22,7 @@ describe "Fish" do
   end
   
   it "should be equal by its arguments" do
-    fish = Fish.new(@command_line_args)
+    fish = Fish.new(@command_line_args, COMPILER_PATH)
     @fish.should == fish
     @fish.should.eql? fish
   end
@@ -43,9 +45,9 @@ end
 
 describe "Pond" do
   before(:each) do
-    @command_line_args_1 = "mxmlc command_line_arguments1"
-    @command_line_args_2 = "mxmlc command_line_arguments2"
-    @pond = Pond.new
+    @command_line_args_1 = "mxmlc command_line_arguments_1"
+    @command_line_args_2 = "mxmlc command_line_arguments_2"
+    @pond = Pond.new(COMPILER_PATH)
   end
   
   after(:each) do

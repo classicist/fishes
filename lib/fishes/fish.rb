@@ -1,10 +1,11 @@
 class Fish
   attr_reader :pid, :compiler_arguments, :exit_status, :fcsh_path
+  
   TERM = "TERM"
   
-  def initialize(compiler_arguments)
+  def initialize(compiler_arguments, path=nil)
     @compiler_arguments = compiler_arguments
-    @fcsh_path = ENV['FLEX_HOME'] + "/bin/fcsh" 
+    @fcsh_path = path || ENV['FLEX_HOME'] + "/bin/fcsh"
   end
     
   def start
@@ -49,7 +50,8 @@ end
 
 
 class Pond  
-  def initialize
+  def initialize(path=nil)
+    @path = path
     @fishes = Hash.new
   end
   
@@ -58,7 +60,7 @@ class Pond
   end
   
   def add(compiler_arguments)
-    fish = @fishes[compiler_arguments] ||= Fish.new(compiler_arguments)
+    fish = @fishes[compiler_arguments] ||= Fish.new(compiler_arguments, @path)
     fish.start
     fish
   end
