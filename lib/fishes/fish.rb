@@ -1,5 +1,6 @@
 class Fish
   attr_reader :pid, :compiler_arguments, :exit_status, :fcsh_path
+  attr_accessor :fish
   
   TERM = "TERM"
   
@@ -12,7 +13,7 @@ class Fish
     return unless @compiler_arguments
     $stdout.sync = true
     @args = pid ? "compile 1" : @compiler_arguments
-    @fish ||= IO.popen(@fcsh_path, "w+")
+    @fish ||= IO.popen(@fcsh_path, "w+") 
     @pid = @fish.pid
     puts read_to_prompt(@fish) + @args
     @fish.puts(@args)

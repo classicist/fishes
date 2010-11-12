@@ -4,26 +4,28 @@ module Bin
   class CLI
     def self.execute(stdout, arguments=[])
 
-      # NOTE: the option -p/--path= is given as an example, and should be replaced in your application.
-
       options = {
-        :path     => '~'
+        :mxmlc => 'mxmlc',
+        :compc => 'compc'
       }
-      mandatory_options = %w(  )
+      
+      mandatory_options = %w( )
 
       parser = OptionParser.new do |opts|
         opts.banner = <<-BANNER.gsub(/^          /,'')
-          This application is wonderful because...
-
-          Usage: #{File.basename($0)} [options]
+        Compiles Adobe Flex applications using FCSH
+        
+          Usage: #{File.basename($0)} [mxmlc]
 
           Options are:
+          -mxmlc  Use mxmlc compiler in FCSH
+          -compc  Use compc compiler in FCSH
         BANNER
         opts.separator ""
-        opts.on("-p", "--path PATH", String,
-                "This is a sample message.",
-                "For multiple lines, add more strings.",
-                "Default: ~") { |arg| options[:path] = arg }
+        opts.on("-mxmlc", "mxmlc", String,
+                "Use mxmlc compiler in FCSH") { |arg| options[:mxmlc] = arg }
+        opts.on("-compc", "compc", String,
+                "Use compc compiler in FCSH") { |arg| options[:compc] = arg }                
         opts.on("-h", "--help",
                 "Show this help message.") { stdout.puts opts; exit }
         opts.parse!(arguments)
@@ -33,10 +35,10 @@ module Bin
         end
       end
 
-      path = options[:path]
+#      compiler_opts 
 
       # do stuff
-      stdout.puts "To update this executable, look in lib/bin/cli.rb"
+      stdout.print options[arguments[0].to_sym]
     end
   end
 end

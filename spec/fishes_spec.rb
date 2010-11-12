@@ -1,16 +1,20 @@
 require File.dirname(__FILE__) + '/spec_helper.rb'
 
-COMPILER_PATH = "#{File.dirname(__FILE__)}/fixture_script"
+COMPILER_PATH = nil#{}"#{File.dirname(__FILE__)}/fixture_script"
+
 
 describe "Fish" do
   before(:each) do
-    @command_line_args = "mxmlc command_line_arguments"
+    @here = File.dirname(__FILE__)
+    @mxmlFile = @here + "/fixtures/FixtureApp.mxml"
+    @output = @here + "/fixtures/bin/FixtureApp.swf"
+    @command_line_args = "mxmlc -file-specs=#{@mxmlFile} -o=#{@output}"
     @fish = Fish.new(@command_line_args, COMPILER_PATH)
   end
   
   after(:each) do
     @fish.stop();
-    @fish = nil 
+    @fish = nil
   end
   
   it "should find a fish" do
@@ -45,9 +49,11 @@ end
 
 describe "Pond" do
   before(:each) do
-    @command_line_args_1 = "mxmlc command_line_arguments_1"
-    @command_line_args_2 = "mxmlc command_line_arguments_2"
     @pond = Pond.new(COMPILER_PATH)
+    @here = File.dirname(__FILE__)
+    @mxmlFile = "mxmlc " + @here + "/fixtures/FixtureApp.mxml"
+    @output = "mxmlc " + @here + "/fixtures/bin/FixtureApp.swf"
+    @command_line_args = "-sp #{@mxmlFile} -o #{@output}"
   end
   
   after(:each) do
@@ -60,12 +66,12 @@ describe "Pond" do
   end
   
   it "should add a fish" do
-    @pond.add(@command_line_args_1).pid.should_not be_nil
+    @pond.add(@command_line_args).pid.should_not be_nil
   end
   
   it "should remove a fish" do
-    @pond.add(@command_line_args_1).pid.should_not be_nil
-    @pond.remove(@command_line_args_1)
+    @pond.add(@command_line_args).pid.should_not be_nil
+    @pond.remove(@command_line_args)
     @pond.size.should == 0
   end
 end
