@@ -35,10 +35,9 @@ module Bin
         end
       end
 
-#      compiler_opts 
 
-      # do stuff
+
       stdout.print options[arguments[0].to_sym]
     end
   end
-end
+end 
