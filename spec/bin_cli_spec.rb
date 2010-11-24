@@ -18,7 +18,7 @@ describe Bin::CLI, "execute" do
   end
   
   it "should print the help" do
-    get_help
+    get_help 
     @stdout.should == "grubmle" 
   end
   
