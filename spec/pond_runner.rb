@@ -5,7 +5,7 @@ require 'sinatra'
 
 CEA_CONFIG = "/Users/monster/Desktop/cea_dumped_config.xml"
 CEA_INPUT  = "/Users/monster/Development/repos/Current/com.clickfox.flex.app.cea/src/main/flex/cfportal.mxml"
-CEA_OUTPUT = "/Users/monster/Development/repos/Current/com.clickfox.app.cea/WebContent/cfpotral.swf"
+CEA_OUTPUT = "/Users/monster/Development/repos/Current/com.clickfox.app.cea/WebContent/cfportal.swf"
 
 get '/cea' do
    @cea_args =  "mxmlc -load-config #{CEA_CONFIG} -output #{CEA_OUTPUT} #{CEA_INPUT}"
