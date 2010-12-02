@@ -1,5 +1,6 @@
+require 'pty'
 class Fish
-  attr_reader :pid, :compiler_arguments, :exit_status, :fcsh_path
+  attr_reader :pid, :io, :compiler_arguments, :exit_status, :fcsh_path
   attr_accessor :fish
   
   TERM = "TERM"
@@ -11,14 +12,24 @@ class Fish
     
   def start
     return unless @compiler_arguments
-    $stdout.sync = true
-    @args = pid ? "compile 1" : @compiler_arguments
-    @fish ||= IO.popen(@fcsh_path, "w+") 
-    @pid = @fish.pid
-    puts read_to_prompt(@fish) + @args
-    @fish.puts(@args)
-    puts read_to_prompt(@fish)
-    @pid
+    @args = @pid ? "compile 1" : @compiler_arguments
+    run_process
+    @pid 
+  end
+  
+  def run_process
+    if @pid
+      @fish.puts(@args)
+    else
+      @t = Thread.new do
+        IO.popen(@fcsh_path, "w+") do |io|             
+          @pid = io.pid
+          @fish = io
+          io.puts @args
+          io.each { |line| print line}
+        end
+      end
+    end
   end
   
   def stop
@@ -28,10 +39,6 @@ class Fish
     @fish = nil
     @pid = nil
     @exit_status
-  end
-  
-  def read_to_prompt(fcsh)
-    fcsh.gets
   end
   
   def ==(other)

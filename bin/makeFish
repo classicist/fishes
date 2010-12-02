@@ -8,3 +8,4 @@ require File.expand_path(File.dirname(__FILE__) + "/../lib/fishes")
 require "bin/cli"
 
 Bin::CLI.execute(STDOUT, ARGV)
+gets

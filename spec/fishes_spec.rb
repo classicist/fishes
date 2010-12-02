@@ -1,7 +1,6 @@
 require File.dirname(__FILE__) + '/spec_helper.rb'
 
-COMPILER_PATH = nil#{}"#{File.dirname(__FILE__)}/fixture_script"
-
+COMPILER_PATH = nil
 
 describe "Fish" do
   before(:each) do
@@ -15,6 +14,7 @@ describe "Fish" do
   after(:each) do
     @fish.stop();
     @fish = nil
+    File.delete @output if File.file? @output
   end
   
   it "should find a fish" do
@@ -59,6 +59,7 @@ describe "Pond" do
   after(:each) do
     @pond.kill_all
     @pond = nil
+    File.delete @output if File.file? @output
   end
   
   it "should find a pond" do
