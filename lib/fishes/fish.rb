@@ -1,6 +1,6 @@
 require 'pty'
 class Fish
-  attr_reader :pid, :io, :compiler_arguments, :exit_status, :fcsh_path
+  attr_reader :pid, :compiler_arguments, :exit_status, :fcsh_path
   attr_accessor :fish
   
   TERM = "TERM"
@@ -18,7 +18,7 @@ class Fish
   end
   
   def run_process
-    if @pid
+    if @fish
       @fish.puts(@args)
     else
       @t = Thread.new do
@@ -83,7 +83,7 @@ class Pond
   end
   
   def kill_all
-    @fishes.each{ |args, fish|  fish.stop }
+    @fishes.each{ |compiler_arguments, fish|  fish.stop }
     @fishes = Hash.new
   end
 end
