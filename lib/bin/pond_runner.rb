@@ -1,22 +1,10 @@
-require File.dirname(__FILE__) + '/spec_helper.rb'
+$:.unshift(File.dirname(__FILE__) + '/..')
+require 'rubygems'
+require 'fishes/fish'
 require 'sinatra'
+require '../conf/constants'
 
 @@pond ||= Pond.new()
-
-CONFIG_DIR = "/Users/monster/Desktop/"
-REPOSITORY_BASE_DIR = "/Users/monster/Development/repos/Current/"
-
-CEA_CONFIG = "#{CONFIG_DIR}/cea_dumped_config.xml"
-ASSETS_CONFIG = "#{CONFIG_DIR}/assets_dumped_config.xml"
-CEA_TEST_ARGS = "-o=#{REPOSITORY_BASE_DIR}/com.clickfox.app.cea/WebContent/TestRunner.swf -library-path+=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.library.assets/bin/com.clickfox.flex.library.assets.swc  -library-path+=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.library.common/lib -library-path+=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.app.cea/src/test/flex/lib -sp+=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.library.common/src/locale/ -sp+=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.library.common/src/ -sp+=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.app.cea/src/main/flex/ -sp+=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.app.cea/src/test/flex/ -locale=en_US -keep-as3-metadata+=Test,Transient,NonCommittingChangeEvent,ChangeEvent,Managed,Bindable -debug=true -file-specs=#{REPOSITORY_BASE_DIR}/com.clickfox.flex.app.cea/src/main/flex/TestRunner.mxml"
-
-CEA_INPUT  = "#{REPOSITORY_BASE_DIR}/com.clickfox.flex.app.cea/src/main/flex/cfportal.mxml"
-CEA_OUTPUT = "#{REPOSITORY_BASE_DIR}/com.clickfox.app.cea/WebContent/cfportal.swf"
-CEA_SPIKE_IN = "#{REPOSITORY_BASE_DIR}/com.clickfox.flex.app.cea/src/main/flex/spike.mxml"
-CEA_SPIKE_OUT = "#{REPOSITORY_BASE_DIR}/com.clickfox.app.cea/WebContent/spike.swf"
-ASSETS_INPUT  = "#{REPOSITORY_BASE_DIR}/com.clickfox.flex.library.assets/src"
-ASSETS_OUTPUT = "#{REPOSITORY_BASE_DIR}/com.clickfox.app.cea/WebContent/assets.swc"
-ASSETS_BIN  = "#{REPOSITORY_BASE_DIR}/com.clickfox.flex.library.assets/bin"
 
 get '/cea' do
    @cea_args =  "mxmlc -load-config #{CEA_CONFIG} -output #{CEA_OUTPUT} #{CEA_INPUT}"

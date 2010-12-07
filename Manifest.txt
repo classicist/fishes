@@ -4,8 +4,9 @@ PostInstall.txt
 README.rdoc
 Rakefile
 bin/bin
-lib/bin/cli.rb
 lib/fishes.rb
+lib/fishes/fish.rb
+lib/bin/pond_runner.rb
 script/console
 script/destroy
 script/generate

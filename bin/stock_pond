@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+ruby ../lib/bin/pond_runner.rb "$@"
+
+
