@@ -5,7 +5,7 @@
    -->
    <compiler>
       <!-- compiler.accessible: generate an accessible SWF-->
-      <accessible>true</accessible>
+      <accessible>false</accessible>
       <!-- compiler.actionscript-file-encoding: specifies actionscript file encoding. If there is no BOM in the AS3 source files, the compiler will use this file encoding.-->
       <!-- compiler.actionscript-file-encoding usage:
       <actionscript-file-encoding>string</actionscript-file-encoding>
@@ -17,7 +17,7 @@
       <!-- compiler.context-root: path to replace {context.root} tokens for service channel endpoints-->
       <context-root>management</context-root>
       <!-- compiler.debug: generates a movie that is suitable for debugging-->
-      <debug>false</debug>
+      <debug>true</debug>
       <!-- compiler.defaults-css-files usage:
       <defaults-css-files>
          <filename>string</filename>
@@ -509,9 +509,9 @@
    <!-- use-network: toggle whether the SWF is flagged for access to network resources-->
    <use-network>true</use-network>
    <!-- verify-digests: verifies the libraries loaded at runtime are the correct ones.-->
-   <!-- verify-digests usage:
-   <verify-digests>boolean</verify-digests>
-   -->
+   <!-- verify-digests usage:  -->
+   <verify-digests>false</verify-digests>
+  
    <!-- version: display the build version of the program-->
    <!-- version usage:
    <version>boolean</version>

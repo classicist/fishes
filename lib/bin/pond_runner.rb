@@ -24,10 +24,17 @@ get '/cea_spike' do
    "CEA Spike Compile"
 end
 
+get '/management' do
+   @cea_args =  "mxmlc -load-config #{MANAGEMENT_CONFIG} -output #{MANAGEMENT_OUTPUT} #{MANAGEMENT_INPUT}"
+   @@pond.add(@cea_args)
+   "CEA Compile"
+end
+
 get '/copy_assets' do
   source = ASSETS_BIN + "/com.clickfox.flex.library.assets.swc" 
-  dest_dir = "#{REPOSITORY_BASE_DIR}/com.clickfox.app.cea/WebContent"
-  `cd #{ASSETS_BIN}; unzip #{source}; mv library.swf assets.swf; mv assets.swf #{dest_dir}; cp #{source} #{dest_dir}/assets.swc`
+  cea_dest_dir = "#{REPOSITORY_BASE_DIR}/#{CEA_WEB_CONTENT}"
+  man_dest_dir = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_WEB_CONTENT}"
+  `cd #{ASSETS_BIN}; unzip -o #{source}; mv library.swf assets.swf; cp -f assets.swf #{cea_dest_dir}/assets.swf; cp -f #{source} #{cea_dest_dir}/assets.swc; cp -f assets.swf #{man_dest_dir}/assets.swf; cp -f #{source} #{man_dest_dir}/assets.swc`
 end
 
 get '/assets' do
