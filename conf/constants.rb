@@ -1,7 +1,7 @@
 $:.unshift(File.dirname(__FILE__))
 require 'local_constants'
 
-CONFIG_DIR              = "#{File.dirname(__FILE__)}/xml"
+CONFIG_DIR              = "#{File.dirname(__FILE__)}/xml/local_build_config"
 
 ASSETS_CONFIG           = "#{CONFIG_DIR}/assets_dumped_config.xml"
 ASSETS_BASE             = "com.clickfox.flex.library.assets"
