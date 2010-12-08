@@ -44,7 +44,13 @@ get '/copy_assets' do
   source = ASSETS_BIN + "/com.clickfox.flex.library.assets.swc" 
   cea_dest_dir = "#{REPOSITORY_BASE_DIR}/#{CEA_WEB_CONTENT}"
   man_dest_dir = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_WEB_CONTENT}"
-  `cd #{ASSETS_BIN}; unzip -o #{source}; mv library.swf assets.swf; cp -f assets.swf #{cea_dest_dir}/assets.swf; cp -f #{source} #{cea_dest_dir}/assets.swc; cp -f assets.swf #{man_dest_dir}/assets.swf; cp -f #{source} #{man_dest_dir}/assets.swc`
+  
+  unzip_swc = "echo 'unzipping:'; unzip -o #{source}; mv library.swf assets.swf;"
+  remove_cruft='echo "removing cruft:"; find . -not -name "*assets.*" -exec rm -drfv {} \;'
+  copy_artifacts_to_destinations="echo 'copying artifacts:'; cp -fv assets.swf #{cea_dest_dir}/assets.swf; cp -fv #{source} #{cea_dest_dir}/assets.swc; cp -fv assets.swf #{man_dest_dir}/assets.swf; cp -fv #{source} #{man_dest_dir}/assets.swc;"
+  clean_up="echo 'cleaning up:'; rm -v assets.swf;"
+      
+  `cd #{ASSETS_BIN}; #{unzip_swc} #{copy_artifacts_to_destinations} #{clean_up} #{remove_cruft} `
 end
 
 get '/assets' do
