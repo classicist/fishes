@@ -53,7 +53,7 @@
       </extensions>
       <!-- compiler.external-library-path: list of SWC files or directories to compile against but to omit from linking-->
       <external-library-path>
-         <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/player/10.1/playerglobal.swc</path-element>
+         <path-element>FLEX_HOME/frameworks/libs/player/10.1/playerglobal.swc</path-element>
       </external-library-path>
       <fonts>
          <!-- compiler.fonts.advanced-anti-aliasing: enables advanced anti-aliasing for embedded fonts, which provides greater clarity for small fonts.-->
@@ -126,13 +126,13 @@
       <keep-generated-actionscript>false</keep-generated-actionscript>
       <!-- compiler.library-path: list of SWC files or directories that contain SWC files-->
       <library-path>
-         <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs</path-element>
-         <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/player</path-element>
-         <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}</path-element>
-         <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/locale/{locale}</path-element>
+         <path-element>FLEX_HOME/frameworks/libs</path-element>
+         <path-element>FLEX_HOME/frameworks/libs/player</path-element>
+         <path-element>FLEX_HOME/frameworks/libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}</path-element>
+         <path-element>FLEX_HOME/frameworks/locale/{locale}</path-element>
       </library-path>
       <library-path>
-         <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs</path-element>
+         <path-element>FLEX_HOME/frameworks/libs</path-element>
       </library-path>
       <!-- compiler.locale: specifies the locale for internationalization-->
       <locale>
@@ -157,19 +157,19 @@
          <!-- compiler.namespaces.namespace: Specify a URI to associate with a manifest of components for use as MXML elements-->
          <namespace>
             <uri>http://ns.adobe.com/mxml/2009</uri>
-            <manifest>/Users/monster/bin/flex_builder_sdk/frameworks/mxml-2009-manifest.xml</manifest>
+            <manifest>FLEX_HOME/frameworks/mxml-2009-manifest.xml</manifest>
          </namespace>
          <namespace>
             <uri>library://ns.adobe.com/flex/spark</uri>
-            <manifest>/Users/monster/bin/flex_builder_sdk/frameworks/spark-manifest.xml</manifest>
+            <manifest>FLEX_HOME/frameworks/spark-manifest.xml</manifest>
          </namespace>
          <namespace>
             <uri>library://ns.adobe.com/flex/mx</uri>
-            <manifest>/Users/monster/bin/flex_builder_sdk/frameworks/mx-manifest.xml</manifest>
+            <manifest>FLEX_HOME/frameworks/mx-manifest.xml</manifest>
          </namespace>
          <namespace>
             <uri>http://www.adobe.com/2006/mxml</uri>
-            <manifest>/Users/monster/bin/flex_builder_sdk/frameworks/mxml-manifest.xml</manifest>
+            <manifest>FLEX_HOME/frameworks/mxml-manifest.xml</manifest>
          </namespace>
       </namespaces>
       <!-- compiler.omit-trace-statements: toggle whether trace statements are omitted-->
@@ -198,7 +198,7 @@
       <show-unused-type-selector-warnings>true</show-unused-type-selector-warnings>
       <!-- compiler.source-path: list of path elements that form the roots of ActionScript class hierarchies-->
       <source-path>
-         <path-element>/Users/monster/Development/repos/Current/com.clickfox.flex.library.assets/src</path-element>
+         <path-element>REPOSITORY_BASE_DIR/com.clickfox.flex.library.assets/src</path-element>
       </source-path>
       <!-- compiler.strict: runs the AS3 compiler in strict error checking mode.-->
       <strict>true</strict>
@@ -406,7 +406,7 @@
    <link-report>filename</link-report>
    -->
    <!-- load-config: load a file containing configuration options-->
-   <load-config>/Users/monster/Development/repos/Current/com.clickfox.flex.library.assets/target/config.xml</load-config>
+   <load-config>REPOSITORY_BASE_DIR/com.clickfox.flex.library.assets/target/config.xml</load-config>
    <!-- load-externs: an XML file containing <def>, <pre>, and <ext> symbols to omit from linking when building a SWF-->
    <!-- load-externs usage:
    <load-externs>filename</load-externs>
@@ -448,7 +448,7 @@
       <title>Adobe Flex 4 Application</title>
    </metadata>
    <!-- output: the filename of the SWF movie to create-->
-   <output>/Users/monster/Development/repos/Current/com.clickfox.flex.library.assets/target/assets.swc</output>
+   <output>REPOSITORY_BASE_DIR/com.clickfox.flex.library.assets/target/assets.swc</output>
    <!-- raw-metadata: XML text to store in the SWF metadata (overrides metadata.* configuration)-->
    <!-- raw-metadata usage:
    <raw-metadata>text</raw-metadata>
@@ -465,42 +465,42 @@
    </runtime-shared-libraries>
    -->
    <runtime-shared-library-path>
-      <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/textLayout.swc</path-element>
+      <path-element>FLEX_HOME/frameworks/libs/textLayout.swc</path-element>
       <rsl-url>http://fpdownload.adobe.com/pub/swz/tlf/1.1.0.604/textLayout_1.1.0.604.swz</rsl-url>
       <policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
       <rsl-url>textLayout_1.1.0.604.swz</rsl-url>
       <policy-file-url></policy-file-url>
    </runtime-shared-library-path>
    <runtime-shared-library-path>
-      <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/osmf.swc</path-element>
+      <path-element>FLEX_HOME/frameworks/libs/osmf.swc</path-element>
       <rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/osmf_flex.4.0.0.13495.swz</rsl-url>
       <policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
       <rsl-url>osmf_flex.4.0.0.13495.swz</rsl-url>
       <policy-file-url></policy-file-url>
    </runtime-shared-library-path>
    <runtime-shared-library-path>
-      <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/framework.swc</path-element>
+      <path-element>FLEX_HOME/frameworks/libs/framework.swc</path-element>
       <rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/framework_4.1.0.16076.swz</rsl-url>
       <policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
       <rsl-url>framework_4.1.0.16076.swz</rsl-url>
       <policy-file-url></policy-file-url>
    </runtime-shared-library-path>
    <runtime-shared-library-path>
-      <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/spark.swc</path-element>
+      <path-element>FLEX_HOME/frameworks/libs/spark.swc</path-element>
       <rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/spark_4.1.0.16076.swz</rsl-url>
       <policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
       <rsl-url>spark_4.1.0.16076.swz</rsl-url>
       <policy-file-url></policy-file-url>
    </runtime-shared-library-path>
    <runtime-shared-library-path>
-      <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/sparkskins.swc</path-element>
+      <path-element>FLEX_HOME/frameworks/libs/sparkskins.swc</path-element>
       <rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/sparkskins_4.1.0.16076.swz</rsl-url>
       <policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
       <rsl-url>sparkskins_4.1.0.16076.swz</rsl-url>
       <policy-file-url></policy-file-url>
    </runtime-shared-library-path>
    <runtime-shared-library-path>
-      <path-element>/Users/monster/bin/flex_builder_sdk/frameworks/libs/rpc.swc</path-element>
+      <path-element>FLEX_HOME/frameworks/libs/rpc.swc</path-element>
       <rsl-url>http://fpdownload.adobe.com/pub/swz/flex/4.1.0.16076/rpc_4.1.0.16076.swz</rsl-url>
       <policy-file-url>http://fpdownload.adobe.com/pub/swz/crossdomain.xml</policy-file-url>
       <rsl-url>rpc_4.1.0.16076.swz</rsl-url>
