@@ -1,1 +1,3 @@
 scratch/**
+*local_build_config/*
+conf/xml/local_build_config/*

@@ -1,11 +1,11 @@
 $:.unshift(File.dirname(__FILE__))
 require 'local_constants'
 
-files = Dir.new("./xml").entries.map{ |filename| filename unless filename =~ /^\..*/}.compact
+files = Dir.new("./xml").entries.map{ |filename| filename if !(filename =~ /^\..*/) && filename.include?(".template")}.compact
 
 files.each do |file_name|
-  initial_file_path   = "./xml/" + file_name
-  processes_file_path = "./xml/local_build_config" + file_name.gsub(".template", "")
+   initial_file_path   = "./xml/" + file_name
+   processes_file_path = "./xml/local_build_config/" + file_name.gsub(".template", "")
    
   file = File.open(initial_file_path, "r")
   repository_base_replacements =  file.read.gsub("REPOSITORY_BASE_DIR", "#{REPOSITORY_BASE_DIR}")
