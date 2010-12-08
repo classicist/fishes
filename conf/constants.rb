@@ -19,6 +19,12 @@ MANAGEMENT_INPUT        = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_FLEX_BASE}/manage
 MANAGEMENT_OUTPUT       = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_WEB_CONTENT}/management.swf"
 MANAGEMENT_CONFIG       = "#{CONFIG_DIR}/management_dumped_config.xml"
 
+LOGIN_FLEX_BASE         = "com.clickfox.flex.module.login/src"
+LOGIN_WEB_CONTENT       = "com.clickfox.app.management/WebContent"
+LOGIN_INPUT             = "#{REPOSITORY_BASE_DIR}/#{LOGIN_FLEX_BASE}/LoginModule.mxml"
+LOGIN_OUTPUT            = "#{REPOSITORY_BASE_DIR}/#{LOGIN_FLEX_BASE}/LoginModule.swf"
+LOGIN_CONFIG            = "#{CONFIG_DIR}/login_module_dumped_config.xml"
+
 ASSETS_INPUT            = "#{REPOSITORY_BASE_DIR}/#{ASSETS_BASE}/src"
 ASSETS_BIN              = "#{REPOSITORY_BASE_DIR}/#{ASSETS_BASE}/bin"
 ASSETS_OUTPUT           = "#{REPOSITORY_BASE_DIR}/#{CEA_WEB_CONTENT}/assets.swc"

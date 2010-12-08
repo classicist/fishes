@@ -27,7 +27,13 @@ end
 get '/management' do
    @cea_args =  "mxmlc -load-config #{MANAGEMENT_CONFIG} -output #{MANAGEMENT_OUTPUT} #{MANAGEMENT_INPUT}"
    @@pond.add(@cea_args)
-   "CEA Compile"
+   "Management Compile"
+end
+
+get '/login' do
+   @cea_args =  "mxmlc -load-config #{LOGIN_CONFIG} -output #{LOGIN_OUTPUT} #{LOGIN_INPUT}"
+   @@pond.add(@cea_args)
+   "Login Module Compile"
 end
 
 get '/copy_assets' do

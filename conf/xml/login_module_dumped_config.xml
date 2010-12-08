@@ -5,7 +5,7 @@
    -->
    <compiler>
       <!-- compiler.accessible: generate an accessible SWF-->
-      <accessible>true</accessible>
+      <accessible>false</accessible>
       <!-- compiler.actionscript-file-encoding: specifies actionscript file encoding. If there is no BOM in the AS3 source files, the compiler will use this file encoding.-->
       <!-- compiler.actionscript-file-encoding usage:
       <actionscript-file-encoding>string</actionscript-file-encoding>
@@ -19,7 +19,7 @@
       <context-root>context-path</context-root>
       -->
       <!-- compiler.debug: generates a movie that is suitable for debugging-->
-      <debug>false</debug>
+      <debug>true</debug>
       <!-- compiler.defaults-css-files usage:
       <defaults-css-files>
          <filename>string</filename>
@@ -226,9 +226,9 @@
          </namespace>
       </namespaces>
       <!-- compiler.omit-trace-statements: toggle whether trace statements are omitted-->
-      <omit-trace-statements>true</omit-trace-statements>
+      <omit-trace-statements>false</omit-trace-statements>
       <!-- compiler.optimize: Enable post-link SWF optimization-->
-      <optimize>true</optimize>
+      <optimize>false</optimize>
       <!-- compiler.report-invalid-styles-as-warnings: enables reporting of invalid styles as warnings-->
       <!-- compiler.report-invalid-styles-as-warnings usage:
       <report-invalid-styles-as-warnings>boolean</report-invalid-styles-as-warnings>
@@ -513,9 +513,8 @@
    <!-- use-network: toggle whether the SWF is flagged for access to network resources-->
    <use-network>true</use-network>
    <!-- verify-digests: verifies the libraries loaded at runtime are the correct ones.-->
-   <!-- verify-digests usage:
-   <verify-digests>boolean</verify-digests>
-   -->
+   <!-- verify-digests usage:-->
+   <verify-digests>false</verify-digests>
    <!-- version: display the build version of the program-->
    <!-- version usage:
    <version>boolean</version>
