@@ -7,7 +7,7 @@ on run argv
 set tabName		 	to item 1 of argv
 set compilerScript  to item 2 of argv
 
-set FCSHWindowTitle to "TextMate fcsh - " & tabName
+set FCSHWindowTitle to "Fcsh - " & tabName
 set FCSHTab to my find_tab_by_title(FCSHWindowTitle)
 
 tell application "Terminal"

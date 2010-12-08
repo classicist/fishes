@@ -1,5 +1,7 @@
+$:.unshift(File.dirname(__FILE__))
+require 'local_constants'
+
 CONFIG_DIR              = "#{File.dirname(__FILE__)}/xml"
-REPOSITORY_BASE_DIR     = "/Users/monster/Development/repos/Current"
 
 ASSETS_CONFIG           = "#{CONFIG_DIR}/assets_dumped_config.xml"
 ASSETS_BASE             = "com.clickfox.flex.library.assets"
