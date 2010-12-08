@@ -6,6 +6,10 @@ require '../conf/constants'
 
 @@pond ||= Pond.new()
 
+get "/" do
+  "URLs are:\n" + "cea\n" + "cea_test\n" + "management\n" + "login\n" + "assets\n" + "copy_assets\n" + "stop\n"
+end
+
 get '/cea' do
    @cea_args =  "mxmlc -load-config #{CEA_CONFIG} -output #{CEA_OUTPUT} #{CEA_INPUT}"
    @@pond.add(@cea_args)
