@@ -7,7 +7,32 @@ login="$OPEN_POND_RUNNER -p 7890"
 cea_test="$OPEN_POND_RUNNER -p 5657"
 management="$OPEN_POND_RUNNER -p 6789"
 
-./../lib/bin/open_windows "CEA Main" "$cea"
-./../lib/bin/open_windows "CEA Test" "$cea_test"
-./../lib/bin/open_windows "Management" "$management"
-./../lib/bin/open_windows "Login Module" "$login"
+case `uname` in
+		CYGWIN*)
+			OS="Windows"
+		;;
+		*)
+			OS="Unix"
+esac
+
+has_ruby="$(which ruby)"
+
+if [[ "$has_ruby" == "" ]]; then
+	echo "you must install ruby, rubygems, and the sinatra gem"
+fi
+
+if [ $OS = "Windows" ]; then
+	echo "Do something to open terminal windows in cygwin here."
+	echo "Then run the following, one per window:"
+	echo "$cea \n $cea_test \n $management \n #login"
+
+elif [ $OS = "Unix" ]; then	
+	./../lib/bin/open_windows "CEA Main" "$cea"
+	./../lib/bin/open_windows "CEA Test" "$cea_test"
+	./../lib/bin/open_windows "Management" "$management"
+	./../lib/bin/open_windows "Login Module" "$login"
+fi
+
+
+
+
