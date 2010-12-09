@@ -5,8 +5,9 @@ CONFIG_DIR              = "#{File.dirname(__FILE__)}/xml/local_build_config"
 
 CEA_FLEX_BASE           = "com.clickfox.flex.app.cea/src/main/flex"                        
 CEA_WEB_CONTENT         = "com.clickfox.app.cea/WebContent"
+CEA_BIN                 = "#{REPOSITORY_BASE_DIR}/#{CEA_WEB_CONTENT}"
 CEA_INPUT               = "#{REPOSITORY_BASE_DIR}/#{CEA_FLEX_BASE}/cfportal.mxml"
-CEA_OUTPUT              = "#{REPOSITORY_BASE_DIR}/#{CEA_WEB_CONTENT}/cfportal.swf"
+CEA_OUTPUT              = "#{CEA_BIN}/cfportal.swf"
 CEA_CONFIG              = "#{CONFIG_DIR}/cea_dumped_config.xml"
 
 CEA_SPIKE_IN            = "#{REPOSITORY_BASE_DIR}/#{CEA_FLEX_BASE}/spike.mxml"
@@ -15,16 +16,16 @@ CEA_SPIKE_OUT           = "#{REPOSITORY_BASE_DIR}/#{CEA_WEB_CONTENT}/spike.swf"
 MANAGEMENT_FLEX_BASE    = "com.clickfox.flex.app.management/src"
 MANAGEMENT_WEB_CONTENT  = "com.clickfox.app.management/WebContent"
 MANAGEMENT_INPUT        = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_FLEX_BASE}/management.mxml"
-MANAGEMENT_OUTPUT       = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_WEB_CONTENT}/management.swf"
+MANAGEMENT_BIN          = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_WEB_CONTENT}"
+MANAGEMENT_OUTPUT       = "#{MANAGEMENT_BIN}/management.swf"
 MANAGEMENT_CONFIG       = "#{CONFIG_DIR}/management_dumped_config.xml"
 
 LOGIN_FLEX_BASE         = "com.clickfox.flex.module.login/src"
 LOGIN_WEB_CONTENT       = "com.clickfox.app.management/WebContent"
+LOGIN_BIN               = "#{REPOSITORY_BASE_DIR}/#{LOGIN_FLEX_BASE}/../bin"
 LOGIN_INPUT             = "#{REPOSITORY_BASE_DIR}/#{LOGIN_FLEX_BASE}/LoginModule.mxml"
-LOGIN_OUTPUT            = "#{REPOSITORY_BASE_DIR}/#{LOGIN_FLEX_BASE}/LoginModule.swf"
+LOGIN_OUTPUT            = "#{LOGIN_BIN}/LoginModule.swf"
 LOGIN_CONFIG            = "#{CONFIG_DIR}/login_module_dumped_config.xml"
-
-
 
 ASSETS_CONFIG           = "#{CONFIG_DIR}/assets_dumped_config.xml"
 ASSETS_BASE             = "com.clickfox.flex.library.assets"

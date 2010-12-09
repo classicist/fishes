@@ -2,8 +2,8 @@ $:.unshift(File.dirname(__FILE__) + '/..')
 require 'rubygems'
 require 'fishes/fish'
 require 'sinatra'
-require '../conf/constants'
-require 'change_watcher'
+require "#{File.dirname(__FILE__)}/../../conf/constants"
+require 'change_runner'
 
 @@pond ||= Pond.new()
 
