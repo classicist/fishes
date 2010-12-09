@@ -4,7 +4,6 @@ $:.unshift(File.dirname(__FILE__))
 require 'rubygems'
 require "filesystemwatcher"
 require "bin/fishing_pole"
-require 'daemons'
 require '../conf/constants'
 require 'sinatra'
 
