@@ -3,6 +3,7 @@ require 'rubygems'
 require 'fishes/fish'
 require 'sinatra'
 require '../conf/constants'
+require 'change_watcher'
 
 @@pond ||= Pond.new()
 
@@ -41,7 +42,7 @@ get '/login' do
 end
 
 get '/copy_assets' do
-  source = ASSETS_BIN + "/com.clickfox.flex.library.assets.swc" 
+  source = ASSETS_BIN + "/" + ASSETS_LONG_NAME_SWC 
   cea_dest_dir = "#{REPOSITORY_BASE_DIR}/#{CEA_WEB_CONTENT}"
   man_dest_dir = "#{REPOSITORY_BASE_DIR}/#{MANAGEMENT_WEB_CONTENT}"
   
@@ -64,27 +65,4 @@ get '/stop' do
   "all done"
 end
 
-
-#TODO
-# 1. Have fish write out to individual log files
-# 2. Watch those files for changes
-# 3. Have sinatra make the browser poll for the changes
-# 4. Cleanup those files in Pond#kill_all
-
-#http://paulhorman.com/filesystemwatcher/
-#require "filesystemwatcher"
-#
-#watcher = FileSystemWatcher.new()
-#watcher.addDirectory("/inetpub/ftproot", "*.xml")
-#watcher.sleepTime = 10
-#watcher.start { |status,file|
-#    if(status == FileSystemWatcher::CREATED) then
-#        puts "created: #{file}"
-#    elsif(status == FileSystemWatcher::MODIFIED) then
-#        puts "modified: #{file}"
-#    elsif(status == FileSystemWatcher::DELETED then
-#        puts "deleted: #{file}"
-#    end
-#}
-#
-#watcher.join() # join to the thread to keep the program alive 
+ChangeRunner.start 
