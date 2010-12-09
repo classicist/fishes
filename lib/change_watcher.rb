@@ -31,6 +31,6 @@ class ChangeWatcherPool
   end
   
   def get(dir_to_watch, file_name_match_to_watch = "*")
-    @watchers[dir_to_watch + file_name_match_to_watch] ||= ChangeWatcher.new(dir_to_watch, file_name_match_to_watch)
+    @watchers[dir_to_watch + file_name_match_to_watch.to_s] ||= ChangeWatcher.new(dir_to_watch, file_name_match_to_watch)
   end
 end

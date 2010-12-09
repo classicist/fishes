@@ -15,11 +15,11 @@ private
   end
   
   def self.recompile_cea_after_dependant_compile
-    recompile CEA_BIN, "/(assets)|(LoginModule)\.swf/", ["cea", "cea_test","cea_spike"]         
+    recompile CEA_BIN, "assets.swf", ["cea", "cea_test","cea_spike"]         
   end
 
   def self.recompile_management_after_dependant_compile   
-    recompile MANAGEMENT_BIN, "/(assets)|(LoginModule)\.swf/",["management"]   
+    recompile MANAGEMENT_BIN, "assets.swf",["management"]   
   end
   
   def self.recompile(dir, file_pattern, call_backs)
