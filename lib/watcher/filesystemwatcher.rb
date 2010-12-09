@@ -1,5 +1,5 @@
 $:.unshift(File.dirname(__FILE__))
-require "md5"
+require "digest/md5"
 require "thread"
 require "servicestate"
 
