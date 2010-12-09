@@ -1,6 +1,8 @@
 $:.unshift(File.dirname(__FILE__))
 require 'local_constants'
 
+puts "This script copies the generic flex build file templates in ./xml to ./xml/local_build_config and replaces the generic paths to FLEX_HOME and the repository to those actual paths on your box. Those paths are set in conf/local_constants."
+
 files = Dir.new("./xml").entries.map{ |filename| filename if !(filename =~ /^\..*/) && filename.include?(".template")}.compact
 
 files.each do |file_name|

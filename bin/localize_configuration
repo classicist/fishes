@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+ruby ../conf/localize_config.rb
