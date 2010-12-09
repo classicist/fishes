@@ -2,10 +2,10 @@
 
 OPEN_POND_RUNNER="cd $(pwd); ruby ../lib/bin/pond_runner.rb"
 
-cea="$OPEN_POND_RUNNER -p 4565"
-login="$OPEN_POND_RUNNER -p 7890"
-cea_test="$OPEN_POND_RUNNER -p 5657"
-management="$OPEN_POND_RUNNER -p 6789"
+cea="$OPEN_POND_RUNNER -p 4560"
+login="$OPEN_POND_RUNNER -p 4561"
+cea_test="$OPEN_POND_RUNNER -p 4562"
+management="$OPEN_POND_RUNNER -p 4563"
 
 case `uname` in
 		CYGWIN*)
