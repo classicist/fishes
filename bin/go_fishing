@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+curl http://localhost:4561/login
+curl http://localhost:4560/cea
+curl http://localhost:4562/cea_test
+curl http://localhost:4563/management
