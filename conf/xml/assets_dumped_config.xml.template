@@ -325,33 +325,34 @@
    <!-- include-classes: a list of classes to include in the output SWC-->
    <include-classes>
       <class>com.clickfox.common.assets.Assets</class>
+      <class>com.clickfox.common.assets.ProtoAssets</class>
+      <class>com.clickfox.common.skins.AnomalyDetectionLinkButtonSkin</class>
       <class>com.clickfox.common.skins.ArrowButtonSkin</class>
       <class>com.clickfox.common.skins.ButtonSetSkin</class>
       <class>com.clickfox.common.skins.CFDateChooserMonthArrowSkin</class>
       <class>com.clickfox.common.skins.CXLinkButtonSkin</class>
+      <class>com.clickfox.common.skins.ChartRangeControlDividerSkin</class>
       <class>com.clickfox.common.skins.CircleButtonSkin</class>
+      <class>com.clickfox.common.skins.ClearPopUpButtonSkin</class>
       <class>com.clickfox.common.skins.CrystalButtonSkin</class>
       <class>com.clickfox.common.skins.DockMenuButtonSkin</class>
       <class>com.clickfox.common.skins.DockTabSkin</class>
       <class>com.clickfox.common.skins.DominantPathButtonSkin</class>
       <class>com.clickfox.common.skins.GradientBorder</class>
+      <class>com.clickfox.common.skins.GradientBox</class>
       <class>com.clickfox.common.skins.HeaderMenuBarBackgroundSkin</class>
       <class>com.clickfox.common.skins.LinkedNodeLabelButtonSkin</class>
       <class>com.clickfox.common.skins.LinkedNodeStepArrowSkin</class>
       <class>com.clickfox.common.skins.NodeLevelButtonSkin</class>
+      <class>com.clickfox.common.skins.NoiseSliderTrackSkin</class>
       <class>com.clickfox.common.skins.PathButtonSkin</class>
       <class>com.clickfox.common.skins.SimpleComboBoxSkin</class>
       <class>com.clickfox.common.skins.SimpleGradientBorder</class>
+      <class>com.clickfox.common.skins.SliderThumbHighlightSkin</class>
+      <class>com.clickfox.common.skins.SliderTrackSkin</class>
       <class>com.clickfox.common.skins.StepLabelSkin</class>
       <class>com.clickfox.common.skins.StepLineArrowSkin</class>
-      <class>com.clickfox.common.skins.GradientBox</class>
-      <class>com.clickfox.common.skins.SliderThumbHighlightSkin</class>
-      <class>com.clickfox.common.skins.ChartRangeControlDividerSkin</class>
-      <class>com.clickfox.common.skins.ClearPopUpButtonSkin</class>
-      <class>com.clickfox.common.skins.NoiseSliderTrackSkin</class>
-      <class>com.clickfox.common.skins.SliderTrackSkin</class>
       <class>com.clickfox.common.skins.ToggleLinkButtonSkin</class>
-      <class>com.clickfox.common.skins.AnomalyDetectionLinkButtonSkin</class>
    </include-classes>
    <!-- include-file: a list of named files to include in the output SWC-->
    <!-- include-file usage:

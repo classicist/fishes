@@ -24,9 +24,15 @@ get '/cea_test' do
 end
 
 get '/cea_spike' do
-   @cea_args =  "mxmlc -load-config #{CEA_CONFIG} -output #{CEA_SPIKE_OUT} #{CEA_SPIKE_IN}"
+   @cea_args =  "mxmlc #{CEA_SPIKE_ARGS}"
    @@pond.add(@cea_args)
    "CEA Spike Compile"
+end
+
+get '/commons' do
+   @cea_args =  "compc -load-config #{COMMONS_CONFIG} -output #{COMMONS_OUTPUT} #{COMMONS_INPUT}"
+   @@pond.add(@cea_args)
+   "CEA Commons Compile"
 end
 
 get '/management' do
